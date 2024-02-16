@@ -1,0 +1,37 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "b635c438d72dcc6a9f62c6a204d7114f"
+name = "AFM_Filler"
+handle = "afm-filler"
+application_url = "https://panos3-34a9ce8de35a.herokuapp.com/"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = false
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_themes,write_themes"
+
+[access.admin]
+direct_api_mode = "online"
+
+[auth]
+redirect_urls = [
+  "https://panos3-34a9ce8de35a.herokuapp.com/auth/callback",
+  "https://panos3-34a9ce8de35a.herokuapp.com/auth/shopify/callback",
+  "https://panos3-34a9ce8de35a.herokuapp.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[webhooks.privacy_compliance]
+customer_deletion_url = "https://panos3-34a9ce8de35a.herokuapp.com/webhooks"
+customer_data_request_url = "https://panos3-34a9ce8de35a.herokuapp.com/webhooks"
+shop_deletion_url = "https://panos3-34a9ce8de35a.herokuapp.com/webhooks"
+
+
+[pos]
+embedded = false
